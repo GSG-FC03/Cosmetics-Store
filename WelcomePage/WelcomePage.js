@@ -1,7 +1,7 @@
 const inpName = document.getElementsByClassName('inpName')[0];
 const btnLogin = document.getElementsByClassName('btnLogin')[0];
 
-btnLogin.onclik = welcome;
+btnLogin.onclick = welcome;
 
 function welcome(e){
     if(inpName.value == '') 
