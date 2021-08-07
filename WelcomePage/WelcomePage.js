@@ -92,7 +92,7 @@ setTimeout(() => {
   // remove the replace API1 + API2  by dataToal in the Local stroage
   localStorage.removeItem("Makeup");
   localStorage.removeItem("Jewellery");
-  localStorage.setItem(" dataTotal", JSON.stringify(dataTotal));
+  localStorage.setItem("dataTotal", JSON.stringify(dataTotal));
 }, 16000);
 
 //------------------------------------------------------ end 25-Code to Import All API data
