@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.container {
+    margin: 16px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 7px
+}
+h3{
+    color: #A06ABA;
+}
+.search-box:hover > .search-txt{
+    width: 165px;
+    background-color:#eae7ea96;
+}
+.searchIcon{
+    position: absolute;
+    right: 6%;
+    padding: 8px;
+    border-radius: 16px;
+}
+.search-txt{
+    width: 0px;
+    height: 29px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 10px;
+} 
+.navbar{
+    margin-top: 25px;
+}
+.list{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+.list li{
+    padding: 10px 20px;
+}
+.active{
+    background: #A06ABA;
+    border-radius: 10px;
+    color: white;    
+}
+footer{
+    position: fixed;
+    bottom: 0px;
+    width: 91%;    
+}
+.icons{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;    
+}
+.icons i{
+    padding:10px;
+    font-size: 20px;
+}
+.icons .fa-home{
+    background: #A06ABA;
+    border-radius: 10px;
+    color: white;
+}
+.icons .fa-shopping-cart{
+    color: #b8b3b3
+}
