@@ -10,6 +10,7 @@ body {
   align-items: center;
 }
 .container {
+  Position:relative;
   height: 812px;
   width: 375px;
   border: 1px solid #ccc;
@@ -84,4 +85,5 @@ body {
 .Loading> img {
  width: 15vh;
  height:auto;
+ opacity: 0.4;
 }
