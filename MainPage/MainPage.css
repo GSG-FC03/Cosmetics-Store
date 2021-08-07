@@ -12,6 +12,9 @@ header {
     align-items: baseline;
     padding: 7px
 }
+h3{
+    color: #A06ABA;
+}
 .search-box:hover > .search-txt{
     width: 165px;
     background-color:#eae7ea96;
@@ -30,3 +33,19 @@ header {
     outline: none;
     padding: 10px;
 } 
+.navbar{
+    margin-top: 25px;
+}
+.list{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+.list li{
+    padding: 10px;
+}
+.active{
+    background: #A06ABA;
+    border-radius: 10px;
+    color: white;    
+}
