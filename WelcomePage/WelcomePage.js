@@ -63,10 +63,10 @@ setTimeout(() => {
       id: data1[i].id,
       image: data1[i].api_featured_image,
       name: data1[i].name,
-      brand: data1[i].brand,
+      brand: data1[i].brand=null?"":data1[i].brand,
       price: data1[i].price,
       Currency: "USD",
-      description: data1[i].description,
+      description: data1[i].description==null?"":data1[i].description,
       rating: data1[i].rating,
     };
     dataTotal.push(oneproduct);
@@ -83,7 +83,7 @@ setTimeout(() => {
       price: data2[i].price,
       //price: Math.round((Math.random() * 10 + 10) * 100) / 100,
       Currency: "USD",
-      description: data2[i].description,
+      description: data2[i].description==null?"":data2[i].description,
       rating: 5, //We created  rating as it is not availabe in original API
     };
     dataTotal.push(oneproduct);
