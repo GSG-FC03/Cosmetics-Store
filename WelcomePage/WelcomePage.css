@@ -68,3 +68,20 @@ body {
   margin-top: 25px;
   cursor: pointer;
 }
+
+.Loading{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top:0px;
+  left: 0px;
+  height: 812px;
+  width: 375px;
+  background-color: rgba(248, 248, 248, 0.562);
+}
+
+.Loading> img {
+ width: 15vh;
+ height:auto;
+}
