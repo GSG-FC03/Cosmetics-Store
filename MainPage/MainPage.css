@@ -12,3 +12,21 @@ header {
     align-items: baseline;
     padding: 7px
 }
+.search-box:hover > .search-txt{
+    width: 165px;
+    background-color:#eae7ea96;
+}
+.searchIcon{
+    position: absolute;
+    right: 6%;
+    padding: 8px;
+    border-radius: 16px;
+}
+.search-txt{
+    width: 0px;
+    height: 29px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 10px;
+} 
