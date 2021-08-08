@@ -21,7 +21,7 @@ let dataResults=[] //Define empty data results
  
  datafiltered=Array.from(dataTotal); //filter data
  dataResults= Array.from(datafiltered);//set final results with filtered data
- slider(dataResults); //Apply Slider function
+ createSlider(dataResults); //Apply Slider function
 
 
 //A. All Btn Code on click ---------------------
@@ -34,7 +34,7 @@ jewelryBtn.setAttribute("class","jewelryBtn")
 
 datafiltered=Array.from(dataTotal); //filter data
 dataResults= Array.from(datafiltered);//set final results with filtered data
-slider(dataResults); //Apply Slider function
+createSlider(dataResults); //Apply Slider function
 })
 
 //B. makeupBtn Btn Code on click ---------------------
@@ -48,7 +48,7 @@ jewelryBtn.setAttribute("class","jewelryBtn")
 datafiltered = dataTotal.filter((elm) => { //Filter results based on Makeup
 return elm.Type == "Makeup"; })
 dataResults= Array.from(datafiltered);//set final results with filtered data
-slider(dataResults); //Apply Slider function
+createSlider(dataResults); //Apply Slider function
   
 })
 
@@ -63,7 +63,7 @@ jewelryBtn.addEventListener("click", (event) => {
   datafiltered = dataTotal.filter((elm) => { //Filter results based on Makeup
   return elm.Type == "Jewellery"; })
   dataResults= Array.from(datafiltered);//set final results with filtered data
-  slider(dataResults); //Apply Slider function
+  createSlider(dataResults); //Apply Slider function
     
   })
 
@@ -88,7 +88,7 @@ search_txt.addEventListener("change", (event) => {
     }
   }
 search_txt.value="";
-slider(dataResults)
+createSlider(dataResults)
 });
 
 // ------------------------------------------------------ end of 36-Search-Explore-Products-Resutls-Array
@@ -100,7 +100,7 @@ head.textContent+=' '+localStorage.getItem('userName');
 // .......................................... end of Declare variables using dom to access elements
 
 //This is example function for slider
-function slider (array) { 
+function createSlider (array) { 
   console. clear()
   console.log(array)
 }
