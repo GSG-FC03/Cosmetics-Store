@@ -1,7 +1,7 @@
 // St of No login without Name & Store Name Issue  St of Loader Issue ---------------------------------
 const inpName = document.getElementsByClassName("inpName")[0];
 const btnLogin = document.getElementsByClassName("btnLogin")[0];
-const Loader = document.getElementsByClassName("Loading")[0];
+const Loader = document.getElementsByClassName("loader")[0];
 
 btnLogin.onclick = welcome;
 

@@ -15,10 +15,12 @@ body {
   width: 375px;
   border: 1px solid #ccc;
   border-radius: 20px;
+  position: relative;
   background: linear-gradient(
     90deg,
     rgba(160, 106, 186, 0.1) 0%,
     rgba(255, 255, 255, 0) 33.33%
+    
   );
 }
 .logo {
@@ -69,8 +71,7 @@ body {
   margin-top: 25px;
   cursor: pointer;
 }
-
-.Loading{
+.loader{
   display: none;
   justify-content: center;
   align-items: center;
@@ -80,10 +81,32 @@ body {
   height: 812px;
   width: 375px;
   background-color: rgba(248, 248, 248, 0.562);
+  opacity: 0.4;
+}
+.loader div{
+  background-color: rgb(207, 45, 45);
+  border-radius: 35px;
+  width: 15%;
+  height: 150px;
+  margin: 20px;
+  animation: loader 1.2s infinite;
 }
 
-.Loading> img {
- width: 15vh;
- height:auto;
- opacity: 0.4;
+@keyframes loader{
+  50%{
+      height: 100px;
+  }
+}
+.loader div:nth-child(1){
+  background-color: #A06ABA;
+  animation-delay:-0.40s ;
+}
+.loader div:nth-child(2){
+  background-color:#A06ABA;
+  animation-delay:-0.20s ;
+
+}
+.loader div:nth-child(3){
+  background-color: #A06ABA;
+  animation-delay:0s ;
 }
