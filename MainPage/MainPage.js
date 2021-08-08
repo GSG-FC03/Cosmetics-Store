@@ -13,6 +13,17 @@ let dataTotal = JSON.parse(localStorage.getItem("dataTotal"));
 let datafiltered=[] //Define medium array for results
 let dataResults=[] //Define empty data results
 
+//A0. run All on page opening
+ // change class to change css
+ allBtn.setAttribute("class","allProduct active")
+ makeupBtn.setAttribute("class","makeupBtn")
+ jewelryBtn.setAttribute("class","jewelryBtn")
+ 
+ datafiltered=Array.from(dataTotal); //filter data
+ dataResults= Array.from(datafiltered);//set final results with filtered data
+ slider(dataResults); //Apply Slider function
+
+
 //A. All Btn Code on click ---------------------
 allBtn.addEventListener("click", (event) => {
 
@@ -76,6 +87,7 @@ search_txt.addEventListener("change", (event) => {
       dataResults.push(datafiltered[i]);
     }
   }
+search_txt.value="";
 slider(dataResults)
 });
 
