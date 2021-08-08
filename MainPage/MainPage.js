@@ -22,7 +22,7 @@ setTimeout(() => {
     const recomDesc = document.createElement("div");
     const idProduct = document.createElement("span");
     const name = document.createElement("h4");
-    const spanName=document.createElement('span');
+    const spanName = document.createElement("span");
     const price = document.createElement("h4");
 
     recom.appendChild(recomBox);
@@ -39,16 +39,16 @@ setTimeout(() => {
     recomImg.setAttribute("class", "recomImg");
     recomDesc.setAttribute("class", "recomDesc");
     idProduct.setAttribute("class", "idProduct");
-    name.setAttribute('class','recomName');
+    name.setAttribute("class", "recomName");
     recomImg.setAttribute("src", `${data[random].image}`);
 
-    // Add EnentListener, that work when click on box to convert user to description page and Explor data based on id products
-    recomBox.addEventListener('click',function(){
-        localStorage.setItem('idProduct',data[random].id);
-        window.location.href='../Description/Description.html';
+    //Add EnentListener, that work when clicking on the box to convert a user to the description page and Explore data based on id products
+    recomBox.addEventListener("click", function () {
+      localStorage.setItem("idProduct", data[random].id);
+      window.location.href = "../Description/Description.html";
     });
 
-    spanName.textContent='Name';
+    spanName.textContent = "Name";
     idProduct.textContent = `${data[random].id}`;
     idProduct.style.display = "none";
     name.textContent = `Name: ${data[random].name}`;
