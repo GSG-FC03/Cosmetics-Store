@@ -1,12 +1,15 @@
 // St of No login without Name & Store Name Issue  St of Loader Issue ---------------------------------
+// Get elemnts from DOM
 const inpName = document.getElementsByClassName("inpName")[0];
 const btnLogin = document.getElementsByClassName("btnLogin")[0];
 const Loader = document.getElementsByClassName("loader")[0];
 
-btnLogin.onclick = welcome;
+btnLogin.onclick = welcome; //Apply the function welcome on click
 
 function welcome(e) {
+  //A. if name is empty no login and create alert
   if (inpName.value == "") alert("Enter Your Name Please");
+  //B If name is not empty but data is not ready, apply loader and test every 1 sec before login
   else if (inpName.value != "" && localStorage.getItem("dataTotal") == null) {
     Loader.style.display = "flex";
 
@@ -17,8 +20,8 @@ function welcome(e) {
         window.location.href = "../MainPage/MainPage.html";
       }
     }, 1000);
+  // C If name is not empty and data is ready, login directly
   } else if (inpName.value != "" && localStorage.getItem("dataTotal") != null) {
-    // e.preventDefault();
     localStorage.setItem("userName", inpName.value);
     inpName.value = "";
     window.location.href = "../MainPage/MainPage.html";
@@ -28,7 +31,7 @@ function welcome(e) {
 
 //St of 25-Code to Import All API data --------------------------------------------------------
 
-// Fetch API1 Makup and save in local storage  at 0 mls
+// Function Fetch API1 Makup and save in local storage  at 0 mls
 async function getAPI1() {
   const response = await fetch(
     "https://makeup-api.herokuapp.com/api/v1/products.json"
@@ -37,7 +40,7 @@ async function getAPI1() {
   localStorage.setItem("Makeup", JSON.stringify(data));
 }
 
-// Fetch API2 Jewellery and save in local storage at 0 mls
+// Function Fetch API2 Jewellery and save in local storage at 0 mls
 async function getAPI2() {
   const response = await fetch(
     "https://fakestoreapi.com/products/category/jewelery"
@@ -46,7 +49,7 @@ async function getAPI2() {
   localStorage.setItem("Jewellery", JSON.stringify(data));
 }
 
-// Fetch API3 Jewellery and save in local storage at 0 mls
+// Function Fetch API3 Jewellery and save in local storage at 0 mls
 async function getAPI3() {
   const response = await fetch(
     "https://v6.exchangerate-api.com/v6/d4ef3c6fae4ad19c0f38bc56/latest/USD"
@@ -55,19 +58,19 @@ async function getAPI3() {
   localStorage.setItem("Exch_Rates", JSON.stringify(data.conversion_rates));
 }
 
-// Call the three functions
+// Invoke the three functions on On page open/refresh
 getAPI1();
 getAPI2();
 getAPI3();
 
-// Run Manipulation To Get Cleaned Data
-setInterval(() => { //run every one sec
-  if (//Check all data available every 1 sec
+// Test every 1 sec if fetch complete and run maniupulation to get final Cleaned Data and store in local storage
+setInterval(() => {
+  //run every one sec
+  if (
+    //Check all data available each round
     localStorage.getItem("Makeup") != null &&
     localStorage.getItem("Jewellery") != null
   ) {
-    
-
     // Import data1 & data2 from local storage to variables
     let data1 = JSON.parse(localStorage.getItem("Makeup"));
     let data2 = JSON.parse(localStorage.getItem("Jewellery"));
