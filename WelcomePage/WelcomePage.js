@@ -63,7 +63,7 @@ setTimeout(() => {
       id: data1[i].id,
       image: data1[i].api_featured_image,
       name: data1[i].name,
-      brand: data1[i].brand=null?"":data1[i].brand,
+      brand: data1[i].brand==null?"":data1[i].brand,
       price: data1[i].price,
       Currency: "USD",
       description: data1[i].description==null?"":data1[i].description,
