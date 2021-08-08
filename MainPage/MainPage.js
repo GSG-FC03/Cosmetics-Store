@@ -42,6 +42,12 @@ setTimeout(() => {
     name.setAttribute('class','recomName');
     recomImg.setAttribute("src", `${data[random].image}`);
 
+    // Add EnentListener, that work when click on box to convert user to description page and Explor data based on id products
+    recomBox.addEventListener('click',function(){
+        localStorage.setItem('idProduct',data[random].id);
+        window.location.href='../Description/Description.html';
+    });
+
     spanName.textContent='Name';
     idProduct.textContent = `${data[random].id}`;
     idProduct.style.display = "none";
