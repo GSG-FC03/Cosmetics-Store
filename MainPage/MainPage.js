@@ -1,13 +1,36 @@
-// St of Search All Products Issue------------------------------------------------------
+// St of 36-Search-Explore-Products-Resutls-Array------------------------------------------------------
 
 // Import products data from local storage
 let dataTotal = JSON.parse(localStorage.getItem("dataTotal"));
 
 // select elements from the DOM
 let search_txt = document.querySelector(".search-txt");
+let allBtn=document.getElementById('makeupBtn')
+let makeupBtn=document.getElementById('allProduct')
+let jewelryBtn= document.getElementById('jewelryBtn')
 
-// Define search Catagorey
+// Define search defualt value
 let searchType = "All"; // supposed to change when toggoling buttons (All,Makup,Jewellery)
+let dataResults=[] //Define empty data results
+
+
+allBtn.addEventListener("click", (event) => {
+
+
+
+  
+})
+
+
+
+
+
+
+
+
+
+
+
 
 // Define array to search in
 let datafiltered = [];
@@ -47,4 +70,4 @@ search_txt.addEventListener("change", (event) => {
   console.log(datasearched); //present search
 });
 
-// ------------------------------------------------------ end of Search All Products Issue
+// ------------------------------------------------------ end of 36-Search-Explore-Products-Resutls-Array
