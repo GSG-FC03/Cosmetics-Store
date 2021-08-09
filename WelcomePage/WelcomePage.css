@@ -10,6 +10,7 @@ body {
   align-items: center;
 }
 .container {
+  Position:relative;
   height: 812px;
   width: 375px;
   border: 1px solid #ccc;
@@ -80,6 +81,7 @@ body {
   height: 812px;
   width: 375px;
   background-color: rgba(248, 248, 248, 0.562);
+  opacity: 0.4;
 }
 .loader div{
   background-color: rgb(207, 45, 45);
