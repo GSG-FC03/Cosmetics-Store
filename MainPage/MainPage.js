@@ -1,4 +1,100 @@
-//Declare variables using dom to access elements
+// St of 36-Search-Explore-Products-Resutls-Array------------------------------------------------------
+
+// select elements from the DOM
+let search_txt = document.querySelector(".search-txt");
+let allBtn=document.getElementById('allProduct')
+let makeupBtn=document.getElementById('makeupBtn')
+let jewelryBtn= document.getElementById('jewelryBtn')
+
+// Import products data from local storage
+let dataTotal = JSON.parse(localStorage.getItem("dataTotal"));
+
+// Define Initital values
+let datafiltered=[] //Define medium array for results
+let dataResults=[] //Define empty data results
+
+//A0. run All on page opening
+ // change class to change css
+ allBtn.setAttribute("class","allProduct active")
+ makeupBtn.setAttribute("class","makeupBtn")
+ jewelryBtn.setAttribute("class","jewelryBtn")
+ 
+ datafiltered=Array.from(dataTotal); //filter data
+ dataResults= Array.from(datafiltered);//set final results with filtered data
+ createSlider(dataResults); //Apply Slider function
+
+
+//A. All Btn Code on click ---------------------
+allBtn.addEventListener("click", (event) => {
+
+  // change class to change css
+allBtn.setAttribute("class","allProduct active")
+makeupBtn.setAttribute("class","makeupBtn")
+jewelryBtn.setAttribute("class","jewelryBtn")
+
+datafiltered=Array.from(dataTotal); //filter data
+dataResults= Array.from(datafiltered);//set final results with filtered data
+createSlider(dataResults); //Apply Slider function
+})
+
+//B. makeupBtn Btn Code on click ---------------------
+makeupBtn.addEventListener("click", (event) => {
+
+// change class to change css
+allBtn.setAttribute("class","allProduct")
+makeupBtn.setAttribute("class","makeupBtn active")
+jewelryBtn.setAttribute("class","jewelryBtn")
+
+datafiltered = dataTotal.filter((elm) => { //Filter results based on Makeup
+return elm.Type == "Makeup"; })
+dataResults= Array.from(datafiltered);//set final results with filtered data
+createSlider(dataResults); //Apply Slider function
+  
+})
+
+//C. Jewellery Btn Code on click ---------------------
+jewelryBtn.addEventListener("click", (event) => {
+  let chiledDiv = document.getElementsByClassName('mySlides')
+  chiledDiv.innerHTML= '';
+  // change class to change css
+  allBtn.setAttribute("class","allProduct")
+  makeupBtn.setAttribute("class","makeupBtn")
+  jewelryBtn.setAttribute("class","jewelryBtn active")
+  
+  datafiltered = dataTotal.filter((elm) => { //Filter results based on Makeup
+  return elm.Type == "Jewellery"; })
+  dataResults= Array.from(datafiltered);//set final results with filtered data
+  createSlider(dataResults); //Apply Slider function
+    
+  })
+
+
+//D. Serach Results on change ---------------------
+search_txt.addEventListener("change", (event) => {
+  dataResults = []; //empty previous results
+
+  for (let i = 0; i < datafiltered.length; i++) { //run through all array
+    if (
+      datafiltered[i].name
+        .toUpperCase()
+        .includes(search_txt.value.toUpperCase()) || //search in name
+      datafiltered[i].description
+        .toUpperCase()
+        .includes(search_txt.value.toUpperCase()) || //search in brand
+      datafiltered[i].brand
+        .toUpperCase()
+        .includes(search_txt.value.toUpperCase()) //search in description
+    ) {
+      dataResults.push(datafiltered[i]);
+    }
+  }
+search_txt.value="";
+createSlider(dataResults)
+});
+
+// ------------------------------------------------------ end of 36-Search-Explore-Products-Resutls-Array
+
+//St  Declare variables using dom to access elements .............................
 const head=document.getElementsByClassName('head')[0];
 
 head.textContent+=' '+localStorage.getItem('userName');
@@ -29,7 +125,15 @@ function showSlides(n) {
 
 // function for makeing elem and push them into the slide      
 function createSlider(arr){
-  arr.forEach(item => { // loop through the array 
+
+  // give the array limited num ( 15 products)
+let num = 15;
+let readyArr = [...arr];
+let newArr= readyArr.slice(0, num);
+
+// loop through the array 
+  newArr.forEach(item => { 
+
 // create elements and get the parent container using DOM 
 let chiledDiv = document.createElement('div')
 let createImG = document.createElement('img')
@@ -37,6 +141,7 @@ let createPtag = document.createElement('p')
 let createprice = document.createElement('p')
 let createId = document.createElement('span')
 let parentSec = document.getElementById('slider')
+
 // Add classes to the created elements to manipulate them
 chiledDiv.classList.add('mySlides')
 chiledDiv.classList.add('fade')
@@ -44,17 +149,24 @@ createPtag.classList.add("text")
 createprice.classList.add("text1")
 createImG.setAttribute('class', 'img')
 createId.setAttribute('class', 'numbertext')
-createImG.setAttribute('src', "1.jpg")
 createImG.setAttribute('src', item.image)
+
 // insert all the elements to the parent section & arrange them
 parentSec.appendChild(chiledDiv);
 chiledDiv.appendChild(createImG);
 chiledDiv.appendChild(createId);
 chiledDiv.appendChild(createPtag);
 chiledDiv.appendChild(createprice);
+
 // change the slider content using the data from the given array 
 createPtag.textContent= `Name: ${item.name}`
 createprice.textContent=`Price: ${item.price} $`
 createId.textContent=`id: ${item.id}`
+
+// create eventlistener on the img so when the user clicks on image it store the id on localstoreage and move to description page 
+chiledDiv.addEventListener('click', () => {
+  localStorage.setItem('productsIdSlider', item.id)
+  window.location.href="../Description/Description.html"
+})
   });
 }
