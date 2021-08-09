@@ -7,7 +7,7 @@ const priceOfProducts=document.querySelector('.priceOfProducts');
 
 const idProduct=Number(localStorage.getItem('idProduct'));// get id from local storage
 
-setTimeout((idProduct)=>{
+setTimeout(()=>{
     const dataTotal=JSON.parse(localStorage.getItem('dataTotal'));// get dataTotalfrom L.S 
     for(let i=0;i<dataTotal.length;++i){ // loop on dataTotal to view description about id product
         if(dataTotal[i].id == idProduct){
