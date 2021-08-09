@@ -6,7 +6,7 @@ head.textContent += " " + localStorage.getItem("userName");
 
 // Create Recommended Section by get data from local Storage.
 setTimeout(() => {
-  const data = JSON.parse(localStorage.getItem(" dataTotal"));
+  const data = JSON.parse(localStorage.getItem("dataTotal"));
 
   const headRecom = document.createElement("h2");
   headRecom.textContent = "Recommended Today";
