@@ -27,6 +27,8 @@ product.quantity=quantity;
 //push in the cart and save in local storage
 cart.push(product)
 localStorage.setItem('cart',JSON.stringify(cart))
+// Move to Main page
+window.location.href = "../MainPage/MainPage.html";
 
 })
 
