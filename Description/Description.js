@@ -1,7 +1,7 @@
 // St of Issue 57-Code-Add-To-Cart -----------------------------------
 
-//For Test purpose
-localStorage.setItem('idProduct',JSON.stringify(25))
+// //For Test purpose
+// localStorage.setItem('idProduct',JSON.stringify(25))
 
 // Capture add to cart button + Quantity from DOM
 let addToCartBtn = document.getElementById('addToCartBtn');
