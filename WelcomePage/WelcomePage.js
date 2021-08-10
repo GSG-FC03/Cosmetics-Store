@@ -78,44 +78,43 @@ setInterval(() => {
     //   Declare the dataTotal variable
     let dataTotal = [];
 
-    // Push data 1 on in  dataTotal Array
-    for (let i = 0; i < data1.length; i++) {
-      let oneproduct = {
-        Type: "Makeup",
-        id: data1[i].id,
-        image: data1[i].api_featured_image,
-        name: data1[i].name,
-        brand: data1[i].brand,
-        price: data1[i].price,
-        Currency: "USD",
-        description: data1[i].description,
-        rating: data1[i].rating,
-      };
-      dataTotal.push(oneproduct);
-    }
-
-    // Push data 2 on in  dataTotal Array
-    for (let i = 0; i < data2.length; i++) {
-      let oneproduct = {
-        Type: "Jewellery",
-        id: data2[i].id + 2000,
-        image: data2[i].image,
-        name: data2[i].title,
-        brand: "Tiffany", // We created brand as it is not availabe in original API
-        price: data2[i].price,
-        //price: Math.round((Math.random() * 10 + 10) * 100) / 100,
-        Currency: "USD",
-        description: data2[i].description,
-        rating: 5, //We created  rating as it is not availabe in original API
-      };
-      dataTotal.push(oneproduct);
-    }
-
-    // remove the replace API1 + API2  by dataToal in the Local stroage
-    localStorage.removeItem("Makeup");
-    localStorage.removeItem("Jewellery");
-    localStorage.setItem("dataTotal", JSON.stringify(dataTotal));
+  // Push data 1 on in  dataTotal Array
+  for (let i = 0; i < data1.length; i++) {
+    let oneproduct = {
+      Type: "Makeup",
+      id: data1[i].id,
+      image: data1[i].api_featured_image,
+      name: data1[i].name,
+      brand: data1[i].brand==null?"":data1[i].brand,
+      price: data1[i].price,
+      Currency: "USD",
+      description: data1[i].description==null?"":data1[i].description,
+      rating: data1[i].rating,
+    };
+    dataTotal.push(oneproduct);
   }
-}, 1000);
+
+  // Push data 2 on in  dataTotal Array
+  for (let i = 0; i < data2.length; i++) {
+    let oneproduct = {
+      Type: "Jewellery",
+      id: data2[i].id + 2000,
+      image: data2[i].image,
+      name: data2[i].title,
+      brand: "Tiffany", // We created brand as it is not availabe in original API
+      price: data2[i].price,
+      //price: Math.round((Math.random() * 10 + 10) * 100) / 100,
+      Currency: "USD",
+      description: data2[i].description==null?"":data2[i].description,
+      rating: 5, //We created  rating as it is not availabe in original API
+    };
+    dataTotal.push(oneproduct);
+  }
+
+  // remove the replace API1 + API2  by dataToal in the Local stroage
+  localStorage.removeItem("Makeup");
+  localStorage.removeItem("Jewellery");
+  localStorage.setItem("dataTotal", JSON.stringify(dataTotal));}
+}, 16000);
 
 //------------------------------------------------------ end 25-Code to Import All API data
