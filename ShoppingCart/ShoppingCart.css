@@ -6,6 +6,10 @@
   }
   a{
       text-decoration: none;
+      font-weight: bold;
+  }
+  .back-icon{
+    color: black;
   }
   body {
     display: flex;
@@ -114,8 +118,8 @@ footer .totalPrice{
 }
 footer #addBtn{
     position: absolute;
-    bottom:35px;
-    right: 30px;
+    bottom:25px;
+    right: 15px;
     background-color: #A06ABA;
     color: white;
     font-size: 22px;
@@ -123,4 +127,7 @@ footer #addBtn{
     height: 55px;
     border: none;
     border-radius: 9px;
+}
+.btn{
+  color:white;
 }
