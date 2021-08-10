@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 .container {
     margin: 16px;
@@ -11,7 +10,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 7px
+    padding: 7px;
+    font-family: 'Poppins', sans-serif;
 }
 h3{
     color: #A06ABA;
@@ -36,11 +36,13 @@ h3{
 } 
 .navbar{
     margin-top: 25px;
+    font-family: 'Poppins', sans-serif;
 }
 .list{
     list-style: none;
     display: flex;
     justify-content: space-around;
+    font-family: 'Poppins', sans-serif;
 }
 .list li{
     padding: 10px 20px;
@@ -72,3 +74,26 @@ footer{
 .icons .fa-shopping-cart{
     color: #b8b3b3
 }
+
+/*Start Recommended style*/
+.recom h2{
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;  
+}
+.recomBox{
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    font-family: system-ui;    
+}
+.recomImg{
+    width: 43vw;
+    height: 38vw;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+.recomName{
+    font-size: 15px;
+    line-height: 1.5;
+}
+/*End Recommended style*/
