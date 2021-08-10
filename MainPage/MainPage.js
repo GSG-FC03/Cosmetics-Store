@@ -22,6 +22,7 @@ let dataResults=[] //Define empty data results
  datafiltered=Array.from(dataTotal); //filter data
  dataResults= Array.from(datafiltered);//set final results with filtered data
  createSlider(dataResults); //Apply Slider function
+ 
 
 
 //A. All Btn Code on click ---------------------
@@ -34,7 +35,9 @@ jewelryBtn.setAttribute("class","jewelryBtn")
 
 datafiltered=Array.from(dataTotal); //filter data
 dataResults= Array.from(datafiltered);//set final results with filtered data
+slideIndex = 1;
 createSlider(dataResults); //Apply Slider function
+showSlides(1)
 })
 
 //B. makeupBtn Btn Code on click ---------------------
@@ -48,14 +51,15 @@ jewelryBtn.setAttribute("class","jewelryBtn")
 datafiltered = dataTotal.filter((elm) => { //Filter results based on Makeup
 return elm.Type == "Makeup"; })
 dataResults= Array.from(datafiltered);//set final results with filtered data
+slideIndex = 1
 createSlider(dataResults); //Apply Slider function
+showSlides(1)
   
 })
 
 //C. Jewellery Btn Code on click ---------------------
 jewelryBtn.addEventListener("click", (event) => {
-  let chiledDiv = document.getElementsByClassName('mySlides')
-  chiledDiv.innerHTML= '';
+
   // change class to change css
   allBtn.setAttribute("class","allProduct")
   makeupBtn.setAttribute("class","makeupBtn")
@@ -64,7 +68,10 @@ jewelryBtn.addEventListener("click", (event) => {
   datafiltered = dataTotal.filter((elm) => { //Filter results based on Makeup
   return elm.Type == "Jewellery"; })
   dataResults= Array.from(datafiltered);//set final results with filtered data
+  slideIndex = 1
   createSlider(dataResults); //Apply Slider function
+  showSlides(1)
+
     
   })
 
@@ -89,16 +96,21 @@ search_txt.addEventListener("change", (event) => {
     }
   }
 search_txt.value="";
+slideIndex = 1
 createSlider(dataResults)
+showSlides(1)
 });
 
 // ------------------------------------------------------ end of 36-Search-Explore-Products-Resutls-Array
 
-//St  Declare variables using dom to access elements .............................
+//St  of naming issue .............................
 const head=document.getElementsByClassName('head')[0];
 
 head.textContent+=' '+localStorage.getItem('userName');
 
+//  ................ End of Name Issue
+
+//St of Slider Issue ------------------------------
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -125,11 +137,14 @@ function showSlides(n) {
 
 // function for makeing elem and push them into the slide      
 function createSlider(arr){
+ document.getElementById('slider').innerHTML="" 
+ 
 
   // give the array limited num ( 15 products)
 let num = 15;
-let readyArr = [...arr];
+let readyArr = Array.from(arr);
 let newArr= readyArr.slice(0, num);
+
 
 // loop through the array 
   newArr.forEach(item => { 
@@ -161,12 +176,13 @@ chiledDiv.appendChild(createprice);
 // change the slider content using the data from the given array 
 createPtag.textContent= `Name: ${item.name}`
 createprice.textContent=`Price: ${item.price} $`
-createId.textContent=`id: ${item.id}`
+// createId.textContent=`id: ${item.id}`
 
 // create eventlistener on the img so when the user clicks on image it store the id on localstoreage and move to description page 
 chiledDiv.addEventListener('click', () => {
-  localStorage.setItem('productsIdSlider', item.id)
+  localStorage.setItem('idProduct', JSON.stringify(item.id))
   window.location.href="../Description/Description.html"
 })
   });
 }
+// ................. End of slider issue
