@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap" rel="stylesheet"> 
     <title>Document</title>
     <link
       rel="stylesheet"
@@ -20,18 +23,22 @@
 
     <section class="header">
         <div class="headerBtn">
-            <i class="fas fa-arrow-left back-icon"></i>
-            <i class="fas fa-shopping-cart cart-icon"></i>
+         <a href="../MainPage/MainPage.html"> 
+          <i class="fas fa-arrow-left back-icon" ></i>
+        </a>  
+        <a href="../ShoppingCart/ShoppingCart.html">
+          <i class="fas fa-shopping-cart cart-icon"></i>
+        </a>
           </div>
       <div>
         <img
-          src="https://s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/048/original/open-uri20180708-4-13okqci?1531093614%22"
+          src="../Assets/logo.png"
           alt="api_featured_images"
         />
       </div>
       <h3 class="ProdectName">Lippie Pencil</h3>
       <div class="count">
-        <i class="fas fa-minus-circle plussign "></i>    2   <i class="fas fa-plus-circle minussign"></i>
+        <i class="fas fa-minus-circle plussign "></i>   <span id="quantityText"> 2 </span>   <i class="fas fa-plus-circle minussign"></i>
       </div>
     </section>
     <section>
@@ -48,7 +55,7 @@
           <h4>Total Price</h4>
           <h2 class="priceOfProducts">50$</h2>  
         </div>
-          <button>Add to Cart</button>
+          <button id="addToCartBtn"> Add to Cart</button>
         </footer>
         <script src="./Description.js"></script>
       </body>
