@@ -45,7 +45,7 @@ plusSign .addEventListener('click',function(){
 minusSign.addEventListener('click',function(){   
     if(count>0){ 
         count-=1;
-        if(count!=0){     // if count not equal to zero then decrement count       
+        if(count!=0){ // if count not equal to zero then calculate total price and update content of priceOfProduct       
             quantity.textContent=count;
             const totalPrice=numPrice*count;
             priceOfProducts.textContent=totalPrice+'$';
