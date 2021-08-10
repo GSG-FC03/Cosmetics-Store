@@ -4,7 +4,7 @@ const img=document.querySelector('img');
 const ProdectName=document.querySelector('.ProdectName');
 const desc=document.querySelector('.desc');
 const priceOfProducts=document.querySelector('.priceOfProducts');
-
+var numPrice;
 const idProduct=Number(localStorage.getItem('idProduct'));// get id from local storage
 
 setTimeout(()=>{
@@ -14,7 +14,15 @@ setTimeout(()=>{
             img.setAttribute('src',dataTotal[i].image);
             ProdectName.textContent=dataTotal[i].name;
             desc.textContent=dataTotal[i].description;
-            priceOfProducts.textContent=dataTotal[i].price+'$';
+            numPrice=dataTotal[i].price;
+           priceOfProducts.textContent=dataTotal[i].price+'$';
+
+           desc.addEventListener('click',function(){
+               desc.classList.toggle('paraSize');
+           });
+            
         }
     }
 });
+
+
