@@ -11,7 +11,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 7px
+    padding: 7px;
+    font-family: 'Poppins', sans-serif;
 }
 h3{
     color: #A06ABA;
@@ -36,11 +37,13 @@ h3{
 } 
 .navbar{
     margin-top: 25px;
+    font-family: 'Poppins', sans-serif;
 }
 .list{
     list-style: none;
     display: flex;
     justify-content: space-around;
+    font-family: 'Poppins', sans-serif;
 }
 .list li{
     padding: 10px 20px;
@@ -163,3 +166,39 @@ footer{
     from {opacity: .4}
     to {opacity: 1}
   }
+/*Start Recommended style*/
+.recom {
+  margin-top: 45px;
+}
+
+h2 {
+  padding: 0px;
+}
+
+.recom{
+    padding: 20px;
+    
+}
+.recomBox{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    font-family: system-ui;
+    height: 20vw;
+    overflow: hidden;    
+}
+.recomImg{
+    width: 23vw;
+    height: 17vw;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+.recomName {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+h4 {
+  font-size: 15px;
+}
+/*End Recommended style*/

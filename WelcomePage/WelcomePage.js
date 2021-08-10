@@ -86,7 +86,7 @@ setInterval(() => {
       image: data1[i].api_featured_image,
       name: data1[i].name,
       brand: data1[i].brand==null?"":data1[i].brand,
-      price: data1[i].price==0?Math.round((Math.random() * 10 + 10) * 100) / 100:data1[i].price,
+      price: data1[i].price==0||data1[i].price==null?Math.round((Math.random() * 10 + 10) * 100) / 100:data1[i].price,
       Currency: "USD",
       description: data1[i].description==null?"":data1[i].description,
       rating: data1[i].rating,
