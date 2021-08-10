@@ -35,7 +35,7 @@ height: 8vh;
 
   .cart{
     width: 343px;
-    height: 102px;
+    height: 140px;
     margin:16px;
     background: #ffffff;
     border: 0.5px solid #c4c4c4;
@@ -45,11 +45,11 @@ height: 8vh;
   } 
   .cart img{
       width: 114px;
-      height: 102px;
+      height: 140px;
       position: absolute;
       left: 0;
       top: 0;
-      border-radius: 9px 0 0 9px 0;
+      border-radius: 9px 0 0 9px;
 
   }
   .cart  .detail {
@@ -61,18 +61,21 @@ height: 8vh;
   }
 .minussign{
     color: #A06ABA;
+    font-size: 22px;
   position: absolute;
-  bottom: 15px;
+  top: 100px;
   right: 20px;
   }
   .plussign{
     color: #A06ABA;
+    font-size: 22px;
     position: absolute;
-    bottom: 15px;
+    top: 100px;
     right: 60px;
     }
     .deleteIcon{
         color: grey;
+    font-size: 22px;
         position: absolute;
         top: 15px;
         right: 20px;
