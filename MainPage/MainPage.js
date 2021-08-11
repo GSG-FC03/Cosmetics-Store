@@ -152,10 +152,3 @@ createSlider(dataResults)
 
 // ------------------------------------------------------ end of 36-Search-Explore-Products-Resutls-Array
 
-
-
-//This is example function for slider
-function createSlider (array) { 
-  console. clear()
-  console.log(array)
-}
