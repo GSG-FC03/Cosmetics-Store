@@ -12,7 +12,7 @@ window.onclick = function (event) {
     if (cart.length == 0) {    // if cart empty convert user to MainPage
       allcart.innerHTML = `<h2>You don't have any Products, Please browse products from <a href=../MainPage/MainPage.html>here</a></h2>`;
     }
-  }
   totalPrice(cart) // Invoke caluclation of sum
-  getSelectedValue() // Innvoke currency exchange  
+  getSelectedValue() // Innvoke currency exchange 
+  } 
 };
