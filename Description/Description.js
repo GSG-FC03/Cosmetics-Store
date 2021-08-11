@@ -53,3 +53,19 @@ minusSign.addEventListener("click", function () {
     }
   }
 });
+
+
+let counterBtn =document.querySelector('#addToCartBtn');
+counterBtn.addEventListener('click', changeCartNum)
+
+
+// counter function 
+function changeCartNum(){
+  let getCart = localStorage.getItem('Jewellery')
+  let getCartArr = JSON.parse(getCart).length
+  let cartNum = document.getElementById('counter');
+ cartNum.classList.remove('count')
+  cartNum.textContent = getCartArr;
+  localStorage.setItem("cartNum", getCartArr)
+
+}
