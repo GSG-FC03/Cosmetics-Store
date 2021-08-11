@@ -23,11 +23,11 @@ event.target.parentElement.getElementById('quantityProduct').textContent>1) { //
     let idProduct=event.target.parentElement.getElementById('productId');// get id element from DOM
     let cart= JSON.parse(localStorage.getItem('cart')); // get cart from local storage
     
-    quantityspan.textContent+-1 //add 1 to quantity in Dom
+    quantityspan.textContent-=1 //add 1 to quantity in Dom
     
     let product=cart.find((elm)=>elm.id=idProduct) //find product in cart array based on id
     let index= cart.indexOf(product) // get product index in cart array
-    cart[index].quantity+-1 // add 1 to quantity in local sotrage
+    cart[index].quantity-=1 // add 1 to quantity in local sotrage
     localStorage.setItem('cart',JSON.stringify(cart)) // save back new cart array in local storage
     
     totalPrice(cart) // Invoke caluclation of sum
@@ -35,7 +35,10 @@ event.target.parentElement.getElementById('quantityProduct').textContent>1) { //
     }
 
 // C. Code for delete button
+else if (event.target.getAttribute("class") == "??????? x class"){
 
 
+
+}
 
 }
