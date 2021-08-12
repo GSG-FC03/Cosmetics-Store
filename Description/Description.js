@@ -61,7 +61,7 @@ counterBtn.addEventListener('click', changeCartNum)
 
 // counter function 
 function changeCartNum(){
-  let getCart = localStorage.getItem('Jewellery')
+  let getCart = localStorage.getItem('cart')
   let getCartArr = JSON.parse(getCart).length
   let cartNum = document.getElementById('counter');
  cartNum.classList.remove('count')
