@@ -242,8 +242,8 @@ chiledDiv.addEventListener('click', () => {
 
 //  counter function
 function changeCartNum(){
-  let getCart = localStorage.getItem("cartNum")
-  let getCartArr = JSON.parse(getCart)
+  let getCart = localStorage.getItem("cart")
+  let getCartArr = JSON.parse(getCart).length
   let cartNum = document.getElementById('counter');
   if(getCartArr == 0 || getCartArr == null){
     cartNum.classList.add('count')
