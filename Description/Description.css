@@ -101,3 +101,6 @@ button{
     border-radius: 50%;
 
   }
+  .countCart{
+      display: none;
+  }
