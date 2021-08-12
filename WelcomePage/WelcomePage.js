@@ -63,7 +63,7 @@ getAPI1();
 getAPI2();
 getAPI3();
 
-// Test every 1 sec if fetch complete and run maniupulation to get final Cleaned Data and store in local storage
+// Test every 0.5 sec if fetch complete and run maniupulation to get final Cleaned Data and store in local storage
 setInterval(() => {
   //run every one sec
   if (
@@ -86,7 +86,7 @@ setInterval(() => {
       image: data1[i].api_featured_image,
       name: data1[i].name,
       brand: data1[i].brand==null?"":data1[i].brand,
-      price: data1[i].price,
+      price: data1[i].price==0||data1[i].price==null?Math.round((Math.random() * 10 + 10) * 100) / 100:data1[i].price,
       Currency: "USD",
       description: data1[i].description==null?"":data1[i].description,
       rating: data1[i].rating,
@@ -103,7 +103,7 @@ setInterval(() => {
       name: data2[i].title,
       brand: "Tiffany", // We created brand as it is not availabe in original API
       price: data2[i].price,
-      //price: Math.round((Math.random() * 10 + 10) * 100) / 100,
+      // price: Math.round((Math.random() * 10 + 10) * 100) / 100,
       Currency: "USD",
       description: data2[i].description==null?"":data2[i].description,
       rating: 5, //We created  rating as it is not availabe in original API
@@ -115,6 +115,6 @@ setInterval(() => {
   localStorage.removeItem("Makeup");
   localStorage.removeItem("Jewellery");
   localStorage.setItem("dataTotal", JSON.stringify(dataTotal));}
-}, 16000);
+}, 500);
 
 //------------------------------------------------------ end 25-Code to Import All API data
