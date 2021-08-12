@@ -63,7 +63,7 @@ getAPI1();
 getAPI2();
 getAPI3();
 
-// Test every 1 sec if fetch complete and run maniupulation to get final Cleaned Data and store in local storage
+// Test every 0.5 sec if fetch complete and run maniupulation to get final Cleaned Data and store in local storage
 setInterval(() => {
   //run every one sec
   if (
@@ -115,6 +115,6 @@ setInterval(() => {
   localStorage.removeItem("Makeup");
   localStorage.removeItem("Jewellery");
   localStorage.setItem("dataTotal", JSON.stringify(dataTotal));}
-}, 16000);
+}, 500);
 
 //------------------------------------------------------ end 25-Code to Import All API data
