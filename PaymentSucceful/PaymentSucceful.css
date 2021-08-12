@@ -4,14 +4,23 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
+@media screen and (min-width: 426px) {
 div {
-  width: 100%;
+  min-height: 100vh;
+  min-width: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh;
+  margin: 0 auto;
+  padding: 30px 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(160, 106, 186, 0.1) 0%,
+    rgba(255, 255, 255, 0) 33.33%
+  );
 }
 
 .check {
@@ -49,12 +58,20 @@ a {
   text-decoration: none;
   text-align: center;
 }
-@media (max-width: 425px) {
+}
+@media screen and (max-width: 425px) {
   body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid #ccc;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(160, 106, 186, 0.1) 0%,
+    rgba(255, 255, 255, 0) 33.33%
+  );
   }
   .container {
     height: 812px;
