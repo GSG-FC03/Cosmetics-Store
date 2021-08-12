@@ -24,7 +24,7 @@ function welcome(e) {
   } else if (inpName.value != "" && localStorage.getItem("dataTotal") != null) {
     localStorage.setItem("userName", inpName.value);
     inpName.value = "";
-    window.location.href = "../MainPage/MainPage.html";
+    window.location.href = "..\\MainPage\\MainPage.html";
   }
 }
 // -------------------------------- End of No login without Name & Store Name Issue  St of Loader Issue
