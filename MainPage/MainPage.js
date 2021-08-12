@@ -148,10 +148,16 @@ search_txt.addEventListener("change", (event) => {
       dataResults.push(datafiltered[i]);
     }
   }
-search_txt.value="";
+search_txt.value=""; // Empty Search input
+
+if(dataResults[0]==null||dataResults[0]==[]){// If search results are null
+document.getElementById('slider').innerHTML='<P class="noResultMsg">The is no results to Show</P>';
+}
+else{// If there are results
 slideIndex = 1
 createSlider(dataResults)
 showSlides(1)
+}
 });
 
 // ------------------------------------------------------ end of 36-Search-Explore-Products-Resutls-Array

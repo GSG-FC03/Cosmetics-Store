@@ -204,6 +204,10 @@ h4 {
 }
 /*End Recommended style*/
 
+.noResultMsg {
+font-size: 25px;
+height: 290px;
+}
 
 /*start Responsive*/
 @media (max-width:1800px) and (min-width: 600px){
