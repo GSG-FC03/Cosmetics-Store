@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shop
-      ping cart</title>
+    <title>Shopping cart</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -19,71 +18,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap" rel="stylesheet"> 
   </head>
   <body>
-    <main class="container">
-      <header class="headerBtn">
-        <i class="fas fa-arrow-left"></i>
+    <header class="headerBtn">
+       <a href="../MainPage/MainPage.html"> <i class="fas fa-arrow-left"></i></a>
       </header>
+    <!-- <main class="container"> -->
+    
       <section class="allCart">
-        
-        <div class="cart1">
-          <img src="../Assets/logoNew.png" alt="sadas" />
-          <div>
-            <h3>Product name </h3>
-            <p>Quitety : <span>2</span></p>
-            <p>$ 2.5</p>
-            <i class="fas fa-minus-circle"></i>2
-            <i class="fas fa-plus-circle"></i>
-          </div>
-          <i class="fas fa-times"></i>
-        </div>
-        <div class="cart2">
-          <img src="../Assets/logoNew.png" alt="sadas" />
-          <div>
-            <h3>Product name </h3>
-            <p>Quitety :  <span> 2 </span></p>
-            <p>$ 2.5</p>
-            <i class="fas fa-minus-circle"></i>2
-            <i class="fas fa-plus-circle"></i>
-          </div>
-          <i class="fas fa-times"></i>
-        </div>
-        <div class="cart3">
-          <img src="../Assets/logoNew.png" alt="sadas" />
-          <div>
-            <h3>Product name </h3>
-            <p>Quitety : <span>2</span></p>
-            <p>$ 2.5</p>
-            <i class="fas fa-minus-circle"></i>2
-            <i class="fas fa-plus-circle"></i>
-          </div>
-          <i class="fas fa-times"></i>
-        </div>
-        <div class="cart4">
-          <img src="../Assets/logoNew.png" alt="sadas" />
-          <div>
-            <h3>Product name </h3>
-            <p>Quitety : <span>2</span></p>
-            <p>$ 2.5</p>
-            <i class="fas fa-minus-circle" ></i>2
-            <i class="fas fa-plus-circle"></i>
-          </div>
-          <i class="fas fa-times"></i>
-        </div>
+
       </section>
-      <section>
-          <select name="exchange" id="exchange">
-              <option value="USD">USD</option>
-              <option value="EUR">EUR</option>
-              <option value="GBP">GBP</option>
-              <option value="CHF">CHF</option>
-          </select>
-          <div class="totalPrice">
-              <h5>Total price</h5>
-              <span><b>$500</b></span>
-          </div>
-          <button><a href="../PaymentSucceful/PaymentSucceful.html">Checkout</a></button>
-      </section>
-    </main>
+    
+    <!-- </main>  -->
+     <footer>
+      <select name="exchange" id="exchange" onchange="getSelectedValue()">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="CHF">CHF</option>
+        </select>
+        <div class="totalPrice">
+            <h5>Total price</h5>
+            <span id="price">$500</span>
+        </div>
+        <button id="addBtn"><a   class="btn" href="../PaymentSucceful/PaymentSucceful.html">Checkout</a></button>
+     </footer>
+<script src="./ShoppingCart.js"></script>
     <body>
 
-</html>
+</html> 

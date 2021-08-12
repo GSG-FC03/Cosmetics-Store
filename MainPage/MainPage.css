@@ -34,7 +34,7 @@ h3{
     border-radius: 5px;
     outline: none;
     padding: 10px;
-} 
+}
 .navbar{
     margin-top: 25px;
     font-family: 'Poppins', sans-serif;
@@ -47,6 +47,7 @@ h3{
 }
 .list li{
     padding: 10px 20px;
+    cursor: pointer;
 }
 .active{
     background: #A06ABA;
@@ -220,3 +221,57 @@ h4 {
 .count{
     display:none;
 }
+
+/*start Responsive*/
+@media (max-width:1800px) and (min-width: 600px){
+  header{margin-bottom:40px ;}
+  h3{font-size: 40px;}
+  .list{margin-bottom: 65px;  font-size: 25px;}
+  .search-box:hover > .search-txt{width: 260px;}
+  .searchIcon{right: 2%;}
+  .slider{cursor: pointer;}
+  .mySlides{margin-left:8%;}
+  .img{width: 90%; height: 57vh;}
+  .prev, .next {top: 60%;}
+  .text {
+    font-size: 27px;
+    width: 100%;
+    text-align: center;
+  }
+  .text1 {left: 35px;}
+  .recom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 7%;
+  }
+  .recom h2{
+    text-shadow: 1px 1px #5a4665;
+    color: #a06aba;
+    margin-bottom: 30px;
+  }
+  .recomBox{
+    width:70%;
+    margin-top: 10px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  .recomDesc{
+    margin-left: 15px;
+    border-radius: 20px;
+    padding:10px;
+    font-size: 40px;    
+  }
+  footer{
+   position: fixed;
+   bottom:0px
+  }
+}
+
+@media (max-width:500px) {
+  .recomBox{
+    width:100%; 
+  }
+}
+/*End Responsive */  
