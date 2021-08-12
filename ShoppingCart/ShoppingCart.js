@@ -2,7 +2,7 @@ window.onclick = function (event) {
 // A. Code for add quantity button
 if (event.target.getAttribute("class") == "fas fa-plus-circle plussign") { //if button is add button
 let quantityspan=event.target.parentElement.getElementById('quantityProduct');// get quanaity element from DOM
-let idProduct=event.target.parentElement.getElementById('productId');// get id element from DOM
+let idProduct=event.target.parentElement.getElementsByClassName(('productId')[0];// get id element from DOM
 let cart= JSON.parse(localStorage.getItem('cart')); // get cart from local storage
 
 quantityspan.textContent+=1 //add 1 to quantity in Dom
@@ -20,7 +20,7 @@ getSelectedValue() // Innvoke currency exchange
 else if (event.target.getAttribute("class") == "fas fa-minus-circle minussign" && //if button is add button
 event.target.parentElement.getElementById('quantityProduct').textContent>1) { // if qunatity > 1
     let quantityspan=event.target.parentElement.getElementById('quantityProduct');// get quanaity element from DOM
-    let idProduct=event.target.parentElement.getElementById('productId');// get id element from DOM
+    let idProduct=event.target.parentElement.getElementsByClassName(('productId')[0];// get id element from DOM
     let cart= JSON.parse(localStorage.getItem('cart')); // get cart from local storage
     
     quantityspan.textContent-=1 //add 1 to quantity in Dom
