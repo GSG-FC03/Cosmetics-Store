@@ -17,14 +17,14 @@ function welcome(e) {
       if (localStorage.getItem("dataTotal") != null) {
         localStorage.setItem("userName", inpName.value);
         Loader.style.display = "none";
-        window.location.href = "..\\MainPage\\MainPage.html";
+        window.location.href = "../MainPage/MainPage.html";
       }
     }, 1000);
   // C If name is not empty and data is ready, login directly
   } else if (inpName.value != "" && localStorage.getItem("dataTotal") != null) {
     localStorage.setItem("userName", inpName.value);
     inpName.value = "";
-    window.location.href = "..\\MainPage\\MainPage.html";
+    window.location.href = "../MainPage/MainPage.html";
   }
 }
 // -------------------------------- End of No login without Name & Store Name Issue  St of Loader Issue
