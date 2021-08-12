@@ -4,13 +4,13 @@
 ### Rose Cosmetics Store App 💄 ###
 
 ## ✧ Links
-- App Live link: [Here](#)
-- App Repo Link on Github:[Here](#)
+- App Live link: [Here](https://gsg-fc03.github.io/Cosmetics-Store/)
+- App Repo Link on Github:[Here](https://github.com/GSG-FC03/Cosmetics-Store.git)
 - Figma Prototype link: [Here](https://www.figma.com/proto/D6wEIVgBJjjTW7Y1OF3GEw/cosmetics?node-id=13%3A56&scaling=scale-down&page-id=0%3A1&starting-point-node-id=13%3A56)
 - Figma Design link: [Here](https://www.figma.com/file/D6wEIVgBJjjTW7Y1OF3GEw/cosmetics?node-id=0%3A1)
 - API documentation
   - API (1): [Makeup Products](https://makeup-api.herokuapp.com/)
-  - API (2): [Skin Care](https://rapidapi.com/apidojo/api/sephora)
+  - API (2): [Jewellery](https://fakestoreapi.com/products/category/jewelery)
   - API (3): [Exchange Rates](https://www.exchangerate-api.com/)
 
 ## ✧The Problem
@@ -43,17 +43,14 @@ GSG-Team 5 come up with creating a ***Rose Cosmetics Store App 💄***, This app
 ## ✧User Stories
 <img width="100%" height="auto" src="./Assets/Userstories.jpg"> <br>
 After different meeting with the client, the team developed the following user stories: <br>
-1- As a `Customer`, I want ***Login using my name*** so that ***I find my saved products in the cart***. <br>
-2- As a `Customer`, I want ***Explore & search products under Makeup section*** so that ***I reached my wanted products***.<br>
-3- As a `Customer`, I want ***Explore & search products under Skin Care section*** so that ***I reached my wanted products***.<br>
-4- As a `Customer`, I want ***Explore & search All Store products*** so that ***I reached my wanted products***.<br>
-5- As a `Customer`, I want ***Explore recommended products*** so that ***I may reach a good recommended product***.<br>
-6- As a `Customer`, I want ***read more description about selected product*** so that ***I get more info to decide to buy the product***.<br>
-7- As a `Customer`, I want ***Control quantity of the product and save to the cart*** so that ***I can save my selections without repeating the process***.<br>
-8- As a `Customer`, I want ***revise my cart*** so that ***I finalize my order before checkout***.<br>
-9- As a `Customer`, I want ***Edit Products in my cart (add Q, decrease Q or delete)*** so that ***I finalize my order before checkout***.<br>
-10- As a `Customer`, I want ***Toggle between the three currency GBP/USD/EUR*** so that ***I see the total cart price in my perffered currency***.<br>
-11- As a `Customer`, I want ***To pay online*** so that ***I complete checkout process***.<br>
+1- As a `Customer`, I can ***Login using my name*** so that ***I find my saved products in the cart***. <br>
+2- As a `Customer`, I can ***Explore & search all products & Expore recommended products *** so that ***I reached my wanted products***.<br>
+3- As a `Customer`, I can ***read more description about selected product*** so that ***I get more info to decide to buy the product***.<br>
+4- As a `Customer`, I can ***Control quantity of the product and save to the cart*** so that ***I can save my selections without repeating the process***.<br>
+5- As a `Customer`, I can ***revise my cart*** so that ***I finalize my order before checkout***.<br>
+6- As a `Customer`, I can ***Edit Products in my cart (add Q, decrease Q or delete)*** so that ***I finalize my order before checkout***.<br>
+7- As a `Customer`, I can ***Toggle between the three currency GBP/USD/EUR*** so that ***I see the total cart price in my perffered currency***.<br>
+8- As a `Customer`, I can ***To pay online*** so that ***I complete checkout process***.<br>
 
 
 **Other user stories were added to the backlog, and will implemented upon the availability of project time.** <br>
@@ -89,6 +86,7 @@ go live server
 - JavaScript|DOM Manipulations ➙ To create interaction between the page and the user and track and process customer buying journey.
 - API ➙ to import/search products data.
 - LocalStorage ➙ to store customers products selections.
+- GoogleMeet & PPT & GitHub➙ to manage project.
 
 ## ✧Team members
 1. [Mohammad Hellis](https://github.com/mo7amedehab97)
