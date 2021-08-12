@@ -25,8 +25,7 @@
   .allCart {
     display: flex;
     flex-wrap: wrap;
-    /* width: 375px; */
-    position: relative;
+    align-content: flex-start;
     height: 70vh;
     margin: 20px 0px 0px 0px;
     overflow: scroll;
