@@ -58,10 +58,10 @@ if (cartTotal.length != 0)
     myCart += `</div>`;
 
     myCart += `<div class="detail">`;
-    myCart += `<span class='productId' style="display:none">${element.id}</span>`;
+    myCart += `<span id="productId" class="productId" style="display:none">${element.id}</span>`;
     myCart += `<h3 id="productName">${element.name}</h3>`;
-    myCart += `<p class="quantity">Quantity:
-                 <span class='quantityProdcut'>${element.quantity}</span>
+    myCart += `<p id="quantity" class="quantity">Quantity:
+                 <span id="quantityProdcut" class='quantityProdcut'>${element.quantity}</span>
                 </p>`;
     myCart += `<p id="priquantityce"><span>Price: </span>${element.price}$</p>`;
     myCart += `<i class="fas fa-plus-circle plussign"></i> <i class="fas fa-minus-circle minussign"></i>
