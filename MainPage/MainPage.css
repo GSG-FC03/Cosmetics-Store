@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 .container {
     margin: 16px;
@@ -75,25 +76,129 @@ footer{
     color: #b8b3b3
 }
 
+/* Slideshow container */
+.slider{
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+  }
+  /* Caption text */
+
+.text1 {
+  color: #000000;
+  font-size: 22px;
+  width: 100%;
+  position: absolute;
+  bottom: -50px;
+  text-align: center;
+  /* margin: 0px; */
+}
+.text {
+  color: #000000;
+  font-size: 22px;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  height: 30px;
+}
+/* Id number */
+.numbertext {
+  color: #070707;
+  font-size: 19px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+/* Img fit  */
+.img{
+    width: 100%;
+    height: 35vh;
+}
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    /* background-color: #A06ABA; */
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #A06ABA;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 500;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 10px;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  /* .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  } */
+  
+  /* Fading animation */
+  /* .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  } */
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
 /*Start Recommended style*/
-.recom h2{
+.recom {
+  margin-top: 45px;
+}
+
+h2 {
+  padding: 0px;
+}
+
+.recom{
     padding: 20px;
-    font-family: 'Poppins', sans-serif;  
+    
 }
 .recomBox{
-    padding: 4px;
+    padding: 5px;
     display: flex;
     align-items: center;
-    font-family: system-ui;    
+    font-family: system-ui;
+    height: 20vw;
+    overflow: hidden;    
 }
 .recomImg{
-    width: 43vw;
-    height: 38vw;
+    width: 23vw;
+    height: 17vw;
     border-radius: 20px;
     margin-right: 10px;
 }
-.recomName{
+.recomName {
     font-size: 15px;
     line-height: 1.5;
+}
+
+h4 {
+  font-size: 15px;
 }
 /*End Recommended style*/
