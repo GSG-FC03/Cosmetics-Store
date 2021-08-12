@@ -101,10 +101,10 @@ function changeCartNum(){
   let getCartArr = JSON.parse(getCart).length
   let cartNum = document.getElementById('counter');
   if(getCartArr == 0 || getCartArr == null){
-    cartNum.classList.add('count')
+    cartNum.classList.add('countCart')
   }
   else{
-    cartNum.classList.remove('count')
+    cartNum.classList.remove('countCart')
     cartNum.textContent = getCartArr;
   }
 }
