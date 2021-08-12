@@ -1,52 +1,3 @@
-// St of Total Issue -----------------------------------------------
-// get item from local storeage 
-const getCart = localStorage.getItem("cart");
-const cart = JSON.parse(getCart)
-const selectBox = document.getElementById("exchange");
-const price = document.getElementById('price');
-const currency = document.getElementById('exchange');
-
-console.log(cart)
-
-// function that calculate all itemm price in the local storeage cart price * quantity 
-function totalPrice(arr){
-  if(arr[0]==null||arr[0]==[]||arr[0]==undefined){return 0}
-  else {
-    let final = [];
-    for (let i=0; i<arr.length; i++){
-
-  final.push(arr[i].price * arr[i].quantity)
-    }
-    const reducer = (accumulator, curr) => accumulator + curr;
-return Math.round(final.reduce(reducer)*100)/100
-  }
-}
-totalPrice(cart)
-
-// func that multiply the total price with curruncey value based on what user choose on the select box  
-function getSelectedValue(){
-    const  coinType = localStorage.getItem('Exch_Rates');
-    const getCart = localStorage.getItem("cart");
-    const cart = JSON.parse(getCart)
-    const final=  JSON.parse(coinType)
-  
-    if (currency.value == 'EUR'){
-     
-       return price.textContent = Math.round(totalPrice(cart)*final.EUR*100)/100 + ' €'
-    }
-   else if (currency.value == 'GBP'){
-        return price.textContent = Math.round(totalPrice(cart)*final.GBP*100)/100 + ' £'
-     }
-     else if (currency.value == 'CHF'){
-        return price.textContent = Math.round(totalPrice(cart)*final.CHF*100)/100
-     }
-     else {
-        return price.textContent = Math.round(totalPrice(cart)*final.USD*100)/100 + ' $'
-     }
-}
-getSelectedValue()
-// ---------------------------------------------------- End of Total Sum issue
-
 // St of List all prodcuts ----------------------------------------------------------
 // St. Declare variables
 const allcart = document.querySelector(".allCart");
@@ -81,7 +32,7 @@ else {
 }
 // --------------------------------------------------End of List all prodcuts 
 
-// St of increase decrease delete issue ---------------------------------------------
+// St of increase & decrease &delete issue ---------------------------------------------
 window.onclick = function (event) {
 // A. Code for add quantity button
 if (event.target.getAttribute("class") == "fas fa-plus-circle plussign") { //if button is add button
@@ -137,3 +88,48 @@ getSelectedValue() // Innvoke currency exchange
 
 }
 
+// St of Total Issue -----------------------------------------------
+// Declare initial variables
+const getCart = localStorage.getItem("cart"); 
+const cart = JSON.parse(getCart) //get item from local storeage 
+const price = document.getElementById('price'); // get price span form DOM
+const currency = document.getElementById('exchange'); //get input from DOM
+
+// function that calculate all itemm price in the local storeage cart price * quantity 
+function totalPrice(arr){
+  if(arr[0]==null||arr[0]==[]||arr[0]==undefined){return 0} // if condition to return 0 if cart is empty
+  else {
+    let final = []; 
+    for (let i=0; i<arr.length; i++){
+
+  final.push(arr[i].price * arr[i].quantity) // create array final and push price and quantity
+    }
+    const reducer = (accumulator, curr) => accumulator + curr;
+return Math.round(final.reduce(reducer)*100)/100 //return final price rounded
+  }
+}
+totalPrice(cart)
+
+// func that multiply the total price with curruncey value based on what user choose on the select box  
+function getSelectedValue(){
+    const  coinType = localStorage.getItem('Exch_Rates'); // they must be called again to get latest update
+    const getCart = localStorage.getItem("cart");
+    const cart = JSON.parse(getCart)
+    const final=  JSON.parse(coinType)
+  
+    if (currency.value == 'EUR'){
+     
+       return price.textContent = Math.round(totalPrice(cart)*final.EUR*100)/100 + ' €'
+    }
+   else if (currency.value == 'GBP'){
+        return price.textContent = Math.round(totalPrice(cart)*final.GBP*100)/100 + ' £'
+     }
+     else if (currency.value == 'CHF'){
+        return price.textContent = Math.round(totalPrice(cart)*final.CHF*100)/100
+     }
+     else {
+        return price.textContent = Math.round(totalPrice(cart)*final.USD*100)/100 + ' $'
+     }
+}
+getSelectedValue()
+// ---------------------------------------------------- End of Total Sum issue
