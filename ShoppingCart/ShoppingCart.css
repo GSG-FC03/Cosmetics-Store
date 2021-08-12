@@ -16,16 +16,20 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-  }
-  .allCart {
-    width: 375px;
-    position: relative;
     background: linear-gradient(
       90deg,
       rgba(160, 106, 186, 0.1) 0%,
       rgba(255, 255, 255, 0) 33.33%
     );
-    margin: 20px;
+  }
+  .allCart {
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 375px; */
+    position: relative;
+    height: 70vh;
+    margin: 20px 0px 0px 0px;
+    overflow: scroll;
   }
   .headerBtn {
 width: 100%;
@@ -49,7 +53,7 @@ height: 8vh;
   } 
   .cart img{
       width: 114px;
-      height: 140px;
+      height: 133px;
       position: absolute;
       left: 0;
       top: 0;
@@ -87,6 +91,9 @@ height: 8vh;
 
    .cart h3{
         margin-top: 10px;
+        width: 190px;
+        height: 61px;
+        overflow: hidden;
     }
 .cart #quantity{
     margin-top: 3px;
@@ -115,6 +122,10 @@ footer .totalPrice{
     left: 30px;
     font-size: 22px;
     padding: 5px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100px;
 }
 footer #addBtn{
     position: absolute;
