@@ -192,6 +192,23 @@ h4 {
 }
 /*End Recommended style*/
 
+/* counter style */
+#counter{
+  background-color: red;
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  right: 60px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  border-radius: 50%;
+
+}
+.count{
+    display:none;
+}
 
 /*start Responsive*/
 @media (max-width:1800px) and (min-width: 600px){
@@ -237,6 +254,9 @@ h4 {
   footer{
    position: fixed;
    bottom:0px
+  }
+  #counter{
+    right: 290px;
   }
 }
 

@@ -80,11 +80,32 @@ plusSign.addEventListener("click", function () {
 minusSign.addEventListener("click", function () {
   if (count > 0) {
     count -= 1;
-    if (count != 0) {
-      // if count not equal to zero then calculate total price and update content of priceOfProduct
+    if (count != 0) {// if count not equal to zero then calculate total price and update content of priceOfProduct
       quantity.textContent = count;
       const totalPrice = numPrice * count;
       priceOfProducts.textContent = totalPrice + "$";
+    }else{
+      count=1;
     }
   }
 });
+
+
+let counterBtn =document.querySelector('#addToCartBtn');
+counterBtn.addEventListener('click', changeCartNum)
+
+
+//  counter function
+function changeCartNum(){
+  let getCart = localStorage.getItem("cart")
+  let getCartArr = JSON.parse(getCart).length
+  let cartNum = document.getElementById('counter');
+  if(getCartArr == 0 || getCartArr == null){
+    cartNum.classList.add('countCart')
+  }
+  else{
+    cartNum.classList.remove('countCart')
+    cartNum.textContent = getCartArr;
+  }
+}
+changeCartNum()
