@@ -1,3 +1,4 @@
+// St of List all prodcuts ----------------------------------------------------------
 // St. Declare variables
 const allcart = document.querySelector(".allCart");
 const cartTotal = JSON.parse(localStorage.getItem("cart"));
@@ -17,7 +18,7 @@ if (cartTotal.length != 0)
     myCart += `<p id="quantity" class="quantity">Quantity:
                  <span id="quantityProdcut" class='quantityProdcut'>${element.quantity}</span>
                 </p>`;
-    myCart += `<p id="priquantityce"><span>Price: </span>${element.price}$</p>`;
+    myCart += `<p id="priquantityce"><span>Unit Price: </span>${element.price}$</p>`;
     myCart += `<i class="fas fa-plus-circle plussign"></i> <i class="fas fa-minus-circle minussign"></i>
       <i class="fas fa-times deleteIcon" id='deleteIcon'></i>`;
     myCart += `</div>`;
@@ -29,8 +30,9 @@ else {
   // if cartTotal empty convert user to MainPage
   allcart.innerHTML = `<h2>You don't have any Products, Please browse products from <a href=../MainPage/MainPage.html>here</a></h2>`;
 }
+// --------------------------------------------------End of List all prodcuts 
 
-
+// St of increase & decrease &delete issue ---------------------------------------------
 window.onclick = function (event) {
 // A. Code for add quantity button
 if (event.target.getAttribute("class") == "fas fa-plus-circle plussign") { //if button is add button
@@ -54,7 +56,6 @@ else if (event.target.getAttribute("class") == "fas fa-minus-circle minussign" &
 event.target.parentElement.getElementsByClassName('quantity')[0].getElementsByClassName('quantityProdcut')[0].textContent>1) { // if qunatity > 1
     let quantityspan=event.target.parentElement.getElementsByClassName('quantity')[0].getElementsByClassName('quantityProdcut')[0];// get quanaity element from DOMquantityProduct
     let idProduct=event.target.parentElement.getElementsByClassName('productId')[0].textContent;// get id element from DOM
-    console.log(idProduct)
     let cart= JSON.parse(localStorage.getItem('cart')); // get cart from local storage
     
     quantityspan.textContent=parseInt(quantityspan.textContent)-1 //add 1 to quantity in Dom
@@ -87,3 +88,48 @@ getSelectedValue() // Innvoke currency exchange
 
 }
 
+// St of Total Issue -----------------------------------------------
+// Declare initial variables
+const getCart = localStorage.getItem("cart"); 
+const cart = JSON.parse(getCart) //get item from local storeage 
+const price = document.getElementById('price'); // get price span form DOM
+const currency = document.getElementById('exchange'); //get input from DOM
+
+// function that calculate all itemm price in the local storeage cart price * quantity 
+function totalPrice(arr){
+  if(arr[0]==null||arr[0]==[]||arr[0]==undefined){return 0} // if condition to return 0 if cart is empty
+  else {
+    let final = []; 
+    for (let i=0; i<arr.length; i++){
+
+  final.push(arr[i].price * arr[i].quantity) // create array final and push price and quantity
+    }
+    const reducer = (accumulator, curr) => accumulator + curr;
+return Math.round(final.reduce(reducer)*100)/100 //return final price rounded
+  }
+}
+totalPrice(cart)
+
+// func that multiply the total price with curruncey value based on what user choose on the select box  
+function getSelectedValue(){
+    const  coinType = localStorage.getItem('Exch_Rates'); // they must be called again to get latest update
+    const getCart = localStorage.getItem("cart");
+    const cart = JSON.parse(getCart)
+    const final=  JSON.parse(coinType)
+  
+    if (currency.value == 'EUR'){
+     
+       return price.textContent = Math.round(totalPrice(cart)*final.EUR*100)/100 + ' €'
+    }
+   else if (currency.value == 'GBP'){
+        return price.textContent = Math.round(totalPrice(cart)*final.GBP*100)/100 + ' £'
+     }
+     else if (currency.value == 'CHF'){
+        return price.textContent = Math.round(totalPrice(cart)*final.CHF*100)/100
+     }
+     else {
+        return price.textContent = Math.round(totalPrice(cart)*final.USD*100)/100 + ' $'
+     }
+}
+getSelectedValue()
+// ---------------------------------------------------- End of Total Sum issue

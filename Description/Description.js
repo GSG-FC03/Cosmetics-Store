@@ -20,6 +20,20 @@ let dataTotal2=JSON.parse(localStorage.getItem('dataTotal'))
 let idProduct2 =JSON.parse(localStorage.getItem('idProduct'))
 let quantity2=quantityText2.textContent;
 
+//Action 1: if product added is already in Cart
+if(cart.find((element)=>element.id==idProduct2)!=null){
+  // find product on cart
+  let product=cart.find((element)=>element.id==idProduct2)
+  //find location in cart
+  let index = cart.indexOf(product)
+  //Add quantity to the product
+  cart[index].quantity=parseInt(cart[index].quantity)+parseInt(quantity2)
+  // save back new cart array in local storage
+  localStorage.setItem('cart',JSON.stringify(cart)) 
+} 
+
+//Action 2: if product in not in cart in local storage
+else{
 //find the product in dataTotal array using idProduct
 let product=dataTotal2.find((element)=>element.id==idProduct2)
 //Add quantity to the product
@@ -27,6 +41,7 @@ product.quantity=quantity2;
 //push in the cart and save in local storage
 cart.push(product)
 localStorage.setItem('cart',JSON.stringify(cart))
+}
 // Move to Main page
 window.location.href = "../MainPage/MainPage.html";
 
@@ -80,11 +95,32 @@ plusSign.addEventListener("click", function () {
 minusSign.addEventListener("click", function () {
   if (count > 0) {
     count -= 1;
-    if (count != 0) {
-      // if count not equal to zero then calculate total price and update content of priceOfProduct
+    if (count != 0) {// if count not equal to zero then calculate total price and update content of priceOfProduct
       quantity.textContent = count;
       const totalPrice = numPrice * count;
       priceOfProducts.textContent = totalPrice + "$";
+    }else{
+      count=1;
     }
   }
 });
+
+
+let counterBtn =document.querySelector('#addToCartBtn');
+counterBtn.addEventListener('click', changeCartNum)
+
+
+//  counter function
+function changeCartNum(){
+  let getCart = localStorage.getItem("cart")
+  let getCartArr = JSON.parse(getCart).length
+  let cartNum = document.getElementById('counter');
+  if(getCartArr == 0 || getCartArr == null){
+    cartNum.classList.add('countCart')
+  }
+  else{
+    cartNum.classList.remove('countCart')
+    cartNum.textContent = getCartArr;
+  }
+}
+changeCartNum()
