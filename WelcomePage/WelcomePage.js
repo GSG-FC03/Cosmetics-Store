@@ -17,8 +17,9 @@ function welcome(e) {
       if (localStorage.getItem("dataTotal") != null) {
         localStorage.setItem("userName", inpName.value);
         Loader.style.display = "none";
-        document.location.href = "./MainPage/MainPage.html";
+        document.location.href = "../MainPage/MainPage.html";
       }
+      cleat;
     }, 1000);
     // C If name is not empty and data is ready, login directly
   } else if (inpName.value != "" && localStorage.getItem("dataTotal") != null) {
