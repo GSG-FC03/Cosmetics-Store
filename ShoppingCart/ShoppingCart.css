@@ -29,6 +29,7 @@
     height: 70vh;
     margin: 20px 0px 0px 0px;
     overflow: scroll;
+    width:100%;
   }
   .headerBtn {
 width: 100%;
@@ -117,7 +118,7 @@ footer #exchange{
 footer .totalPrice{
 
     position: absolute;
-    bottom:25px;
+    bottom:12px;
     left: 30px;
     font-size: 22px;
     padding: 5px 0;
