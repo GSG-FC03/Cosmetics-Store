@@ -1,3 +1,7 @@
+// Define Variables
+const sliderbox=document.getElementById('slider')
+
+
 // Create Recommended Section by get data from local Storage.
 setTimeout(() => {
   const data = JSON.parse(localStorage.getItem("dataTotal"));
@@ -151,7 +155,7 @@ search_txt.addEventListener("change", (event) => {
 search_txt.value=""; // Empty Search input
 
 if(dataResults[0]==null||dataResults[0]==[]){// If search results are null
-document.getElementById('slider').innerHTML='<P class="noResultMsg">The is no results to Show</P>';
+sliderbox.innerHTML='<P class="noResultMsg">The is no results to Show</P>';
 }
 else{// If there are results
 slideIndex = 1
@@ -214,7 +218,7 @@ let createImG = document.createElement('img')
 let createPtag = document.createElement('p')
 let createprice = document.createElement('p')
 let createId = document.createElement('span')
-let parentSec = document.getElementById('slider')
+
 
 // Add classes to the created elements to manipulate them
 chiledDiv.classList.add('mySlides')
@@ -226,7 +230,7 @@ createId.setAttribute('class', 'numbertext')
 createImG.setAttribute('src', item.image)
 
 // insert all the elements to the parent section & arrange them
-parentSec.appendChild(chiledDiv);
+sliderbox.appendChild(chiledDiv);
 chiledDiv.appendChild(createImG);
 chiledDiv.appendChild(createId);
 chiledDiv.appendChild(createPtag);
