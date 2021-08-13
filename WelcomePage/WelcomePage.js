@@ -17,7 +17,9 @@ function welcome(e) {
       if (localStorage.getItem("dataTotal") != null) {
         localStorage.setItem("userName", inpName.value);
         Loader.style.display = "none";
-        document.location.href = "../MainPage/MainPage.html";
+        console.log(window.location.hostname);
+        window.location.href =
+          window.location.hostname + "../MainPage/MainPage.html";
       }
       cleat;
     }, 1000);
@@ -25,7 +27,9 @@ function welcome(e) {
   } else if (inpName.value != "" && localStorage.getItem("dataTotal") != null) {
     localStorage.setItem("userName", inpName.value);
     inpName.value = "";
-    window.location.href = "../MainPage/MainPage.html";
+    console.log(window.location.hostname, "no");
+    window.location.href =
+      window.location.hostname + "../MainPage/MainPage.html";
     //dddd
   }
 }
