@@ -26,6 +26,7 @@ function welcome(e) {
     localStorage.setItem("userName", inpName.value);
     inpName.value = "";
     window.location.href = "../MainPage/MainPage.html";
+    //dddd
   }
 }
 // -------------------------------- End of No login without Name & Store Name Issue  St of Loader Issue
