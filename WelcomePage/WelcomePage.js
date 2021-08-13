@@ -17,10 +17,10 @@ function welcome(e) {
       if (localStorage.getItem("dataTotal") != null) {
         localStorage.setItem("userName", inpName.value);
         Loader.style.display = "none";
-        window.location.href = "../MainPage/MainPage.html";
+        document.location.href = "./MainPage/MainPage.html";
       }
     }, 1000);
-  // C If name is not empty and data is ready, login directly
+    // C If name is not empty and data is ready, login directly
   } else if (inpName.value != "" && localStorage.getItem("dataTotal") != null) {
     localStorage.setItem("userName", inpName.value);
     inpName.value = "";
@@ -78,43 +78,47 @@ setInterval(() => {
     //   Declare the dataTotal variable
     let dataTotal = [];
 
-  // Push data 1 on in  dataTotal Array
-  for (let i = 0; i < data1.length; i++) {
-    let oneproduct = {
-      Type: "Makeup",
-      id: data1[i].id,
-      image: data1[i].api_featured_image,
-      name: data1[i].name,
-      brand: data1[i].brand==null?"":data1[i].brand,
-      price: data1[i].price==0||data1[i].price==null?Math.round((Math.random() * 10 + 10) * 100) / 100:data1[i].price,
-      Currency: "USD",
-      description: data1[i].description==null?"":data1[i].description,
-      rating: data1[i].rating,
-    };
-    dataTotal.push(oneproduct);
-  }
+    // Push data 1 on in  dataTotal Array
+    for (let i = 0; i < data1.length; i++) {
+      let oneproduct = {
+        Type: "Makeup",
+        id: data1[i].id,
+        image: data1[i].api_featured_image,
+        name: data1[i].name,
+        brand: data1[i].brand == null ? "" : data1[i].brand,
+        price:
+          data1[i].price == 0 || data1[i].price == null
+            ? Math.round((Math.random() * 10 + 10) * 100) / 100
+            : data1[i].price,
+        Currency: "USD",
+        description: data1[i].description == null ? "" : data1[i].description,
+        rating: data1[i].rating,
+      };
+      dataTotal.push(oneproduct);
+    }
 
-  // Push data 2 on in  dataTotal Array
-  for (let i = 0; i < data2.length; i++) {
-    let oneproduct = {
-      Type: "Jewellery",
-      id: data2[i].id + 2000,
-      image: data2[i].image,
-      name: data2[i].title,
-      brand: "Tiffany", // We created brand as it is not availabe in original API
-      price: data2[i].price,
-      // price: Math.round((Math.random() * 10 + 10) * 100) / 100,
-      Currency: "USD",
-      description: data2[i].description==null?"":data2[i].description,
-      rating: 5, //We created  rating as it is not availabe in original API
-    };
-    dataTotal.push(oneproduct);
-  }
+    // Push data 2 on in  dataTotal Array
+    for (let i = 0; i < data2.length; i++) {
+      let oneproduct = {
+        Type: "Jewellery",
+        id: data2[i].id + 2000,
+        image: data2[i].image,
+        name: data2[i].title,
+        brand: "Tiffany", // We created brand as it is not availabe in original API
+        price: data2[i].price,
+        // price: Math.round((Math.random() * 10 + 10) * 100) / 100,
+        Currency: "USD",
+        description: data2[i].description == null ? "" : data2[i].description,
+        rating: 5, //We created  rating as it is not availabe in original API
+      };
+      dataTotal.push(oneproduct);
+    }
 
-  // remove the replace API1 + API2  by dataToal in the Local stroage
-  localStorage.removeItem("Makeup");
-  localStorage.removeItem("Jewellery");
-  localStorage.setItem("dataTotal", JSON.stringify(dataTotal));}
+    // remove the replace API1 + API2  by dataToal in the Local stroage
+    localStorage.removeItem("Makeup");
+    localStorage.removeItem("Jewellery");
+    localStorage.setItem("dataTotal", JSON.stringify(dataTotal));
+  }
 }, 500);
 
 //------------------------------------------------------ end 25-Code to Import All API data
