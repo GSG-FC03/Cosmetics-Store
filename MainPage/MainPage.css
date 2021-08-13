@@ -192,6 +192,9 @@ h4 {
 }
 /*End Recommended style*/
 
+.noResultMsg {
+font-size: 25px;
+height: 290px;}
 /* counter style */
 #counter{
   background-color: red;
@@ -204,7 +207,6 @@ h4 {
   text-align: center;
   color: white;
   border-radius: 50%;
-
 }
 .count{
     display:none;
