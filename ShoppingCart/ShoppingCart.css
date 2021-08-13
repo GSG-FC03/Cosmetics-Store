@@ -141,3 +141,6 @@ footer #addBtn{
 .btn{
   color:white;
 }
+.allCart>h2{ /*the msg if no prodcuts*/
+  margin: 15px;
+}
