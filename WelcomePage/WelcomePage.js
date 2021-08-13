@@ -19,7 +19,7 @@ function welcome(e) {
         Loader.style.display = "none";
         window.location.href = "../MainPage/MainPage.html";
       }
-    }, 1000);
+    }, 500);
   // C If name is not empty and data is ready, login directly
   } else if (inpName.value != "" && localStorage.getItem("dataTotal") != null) {
     localStorage.setItem("userName", inpName.value);

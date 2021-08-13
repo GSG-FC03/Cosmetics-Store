@@ -196,24 +196,28 @@ h4 {
 font-size: 25px;
 height: 290px;}
 /* counter style */
+
+.cartIcon {
+  display: flex;
+  justify-content: center;
+}
 #counter{
   background-color: red;
-  width: 21px;
-  height: 21px;
-  position: absolute;
-  right: 60px;
-  font-size: 14px;
+  width: 2.6vh;
+  height: 20px;
+  font-size: 12px;
   font-weight: 600;
   text-align: center;
   color: white;
   border-radius: 50%;
 }
+
 .count{
     display:none;
 }
 
 /*start Responsive*/
-@media (max-width:1800px) and (min-width: 600px){
+@media (min-width: 600px){
   header{margin-bottom:40px ;}
   h3{font-size: 40px;}
   .list{margin-bottom: 65px;  font-size: 25px;}
