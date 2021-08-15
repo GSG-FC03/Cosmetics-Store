@@ -18,8 +18,8 @@ function welcome(e) {
         localStorage.setItem("userName", inpName.value);
         Loader.style.display = "none";
         console.log(window.location.hostname);
-        window.location.href =
-          window.location.hostname + "../MainPage/MainPage.html";
+        window.location.assign =
+          window.location.hostname + "/MainPage/MainPage.html";
       }
       cleat;
     }, 1000);
@@ -28,8 +28,8 @@ function welcome(e) {
     localStorage.setItem("userName", inpName.value);
     inpName.value = "";
     console.log(window.location.hostname, "no");
-    window.location.href =
-      window.location.hostname + "../MainPage/MainPage.html";
+    window.location.assign =
+      window.location.hostname + "/MainPage/MainPage.html";
     //dddd
   }
 }
