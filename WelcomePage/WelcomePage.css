@@ -82,15 +82,15 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
-  height: 812px;
-  width: 375px;
+  height: 100%;
+  width: 100%;
   background-color: rgba(248, 248, 248, 0.562);
   opacity: 0.4;
 }
 .loader div{
   background-color: rgb(207, 45, 45);
   border-radius: 35px;
-  width: 15%;
+  width: 6vh;
   height: 150px;
   margin: 20px;
   animation: loader 1.2s infinite;
@@ -148,7 +148,7 @@ body {
     align-items: center;
     text-align: center;
     color: #b8b3b7;
-    margin-top: 50px;
+    margin-top: 25px;
     padding: 60px 60px;
   }
   .signIn {
@@ -192,15 +192,15 @@ body {
     position: absolute;
     top:0px;
     left: 0px;
-    height: 812px;
-    width: 375px;
+    height: 100%;
+    width: 100%;
     background-color: rgba(248, 248, 248, 0.562);
     opacity: 0.4;
   }
   .loader div{
     background-color: rgb(207, 45, 45);
     border-radius: 35px;
-    width: 15%;
+    width: 6vh;
     height: 150px;
     margin: 20px;
     animation: loader 1.2s infinite;

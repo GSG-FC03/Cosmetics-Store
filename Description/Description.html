@@ -11,15 +11,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="../Description/Description.css" />
+  <link rel="stylesheet" href="./Description.css" />
   <title>Description</title>
 </head>
 
 <body>
-
-
-
-  <section class="header">
+<main class='container'>
+  <header>
     <div class="headerBtn">
       <a href="../MainPage/MainPage.html">
         <i class="fas fa-arrow-left back-icon"></i>
@@ -27,20 +25,20 @@
       <a href="../ShoppingCart/ShoppingCart.html">
         <i class="fas fa-shopping-cart cart-icon"></i><span id="counter" class="countCart"></span>
       </a>
-    </div>
-    <div>
+    </div>    
+  </header>
+  <section>
+    <div class='imgBox'>
       <img alt="api_featured_images" />
     </div>
-    <h3 class="ProdectName">Lippie Pencil</h3>
-    <div class="count">
-      <i class="fas fa-minus-circle minussign "></i> <span id="quantityText"> </span> <i
-        class="fas fa-plus-circle plussign"></i>
-    </div>
-  </section>
-  <section>
-    <div class="description">
-      <p class="desc"></p>
-    </div>
+    <div class='description'>
+      <h3 class="ProdectName">Lippie Pencil</h3>
+       <div class="count">
+         <i class="fas fa-minus-circle minussign "></i> <span id="quantityText"></span> 
+         <i class="fas fa-plus-circle plussign"></i>
+         </div>
+         <p class="desc"></p>
+    </div>     
   </section>
   <footer>
     <div class="price">
@@ -49,7 +47,7 @@
     </div>
     <button id="addToCartBtn"> Add to Cart</button>
   </footer>
-  <script src="../Description/Description.js"></script>
+</main>
+  <script src="./Description.js"></script>
 </body>
-
 </html>

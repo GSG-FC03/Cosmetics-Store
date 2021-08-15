@@ -108,6 +108,7 @@ jewelryBtn.setAttribute("class","jewelryBtn")
 datafiltered = dataTotal.filter((elm) => { //Filter results based on Makeup
 return elm.Type == "Makeup"; })
 dataResults= Array.from(datafiltered);//set final results with filtered data
+dataResults.reverse()
 slideIndex = 1
 createSlider(dataResults); //Apply Slider function
 showSlides(1)

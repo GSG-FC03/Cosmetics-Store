@@ -20,8 +20,7 @@ function welcome(e) {
         console.log(window.location.hostname);
         window.location.href = "../MainPage/MainPage.html";
       }
-      cleat;
-    }, 1000);
+    }, 500);
     // C If name is not empty and data is ready, login directly
   } else if (inpName.value != "" && localStorage.getItem("dataTotal") != null) {
     localStorage.setItem("userName", inpName.value);
