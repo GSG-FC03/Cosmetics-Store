@@ -17,8 +17,13 @@ function welcome(e) {
       if (localStorage.getItem("dataTotal") != null) {
         localStorage.setItem("userName", inpName.value);
         Loader.style.display = "none";
-        console.log(window.location.hostname);
-        window.location.href = "../MainPage/MainPage.html";
+        console.log(
+          77777,
+          window.location.hostname + "/MainPage/MainPage.html"
+        );
+        window.location.assign(
+          window.location.hostname + "/MainPage/MainPage.html"
+        );
         window.clearTimeout(time);
       }
     }, 500);
@@ -26,7 +31,7 @@ function welcome(e) {
   } else if (inpName.value != "" && localStorage.getItem("dataTotal") != null) {
     localStorage.setItem("userName", inpName.value);
     inpName.value = "";
-    console.log(000, window.location.pathname);
+    console.log(000, window.location.hostname + "/MainPage/MainPage.html");
     window.location.assign(
       window.location.hostname + "/MainPage/MainPage.html"
     );
