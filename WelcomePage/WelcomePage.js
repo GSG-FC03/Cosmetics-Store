@@ -13,12 +13,12 @@ function welcome(e) {
   else if (inpName.value != "" && localStorage.getItem("dataTotal") == null) {
     Loader.style.display = "flex";
 
-    setInterval(() => {
+    setTimeout(() => {
       if (localStorage.getItem("dataTotal") != null) {
         localStorage.setItem("userName", inpName.value);
         Loader.style.display = "none";
         console.log(window.location.hostname);
-        window.location.assign = ` {window.location.hostname}/MainPage/MainPage.html`;
+        window.location.href = "../MainPage/MainPage.html";
       }
       cleat;
     }, 1000);
@@ -26,9 +26,7 @@ function welcome(e) {
   } else if (inpName.value != "" && localStorage.getItem("dataTotal") != null) {
     localStorage.setItem("userName", inpName.value);
     inpName.value = "";
-    console.log(window.location.hostname, "no");
-    window.location.assign = ` {window.location.hostname}/MainPage/MainPage.html`;
-    //dddd
+    window.location.href = "../MainPage/MainPage.html";
   }
 }
 // -------------------------------- End of No login without Name & Store Name Issue  St of Loader Issue
