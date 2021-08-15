@@ -10,24 +10,26 @@ function welcome(e) {
   //A. if name is empty no login and create alert
   if (inpName.value == "") alert("Enter Your Name Please");
   //B If name is not empty but data is not ready, apply loader and test every 1 sec before login
-  else if (inpName.value != "" && localStorage.getItem("dataTotal") != null) {
-    //
-    localStorage.setItem("userName", inpName.value);
-    inpName.value = "";
-    window.location.href = "../MainPage/MainPage.html";
-
-    // C If name is not empty and data is ready, login directly
-  } else if (inpName.value != "" && localStorage.getItem("dataTotal") == null) {
+  else if (inpName.value != "" && localStorage.getItem("dataTotal") == null) {
     Loader.style.display = "flex";
 
     let time = setTimeout(() => {
       if (localStorage.getItem("dataTotal") != null) {
         localStorage.setItem("userName", inpName.value);
         Loader.style.display = "none";
+        console.log(window.location.hostname);
         window.location.href = "../MainPage/MainPage.html";
         window.clearTimeout(time);
       }
     }, 500);
+    // C If name is not empty and data is ready, login directly
+  } else if (inpName.value != "" && localStorage.getItem("dataTotal") != null) {
+    localStorage.setItem("userName", inpName.value);
+    inpName.value = "";
+    console.log(000, window.location.pathname);
+    window.location.assign(
+      window.location.hostname + "/MainPage/MainPage.html"
+    );
   }
 }
 // -------------------------------- End of No login without Name & Store Name Issue  St of Loader Issue
