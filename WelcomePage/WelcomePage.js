@@ -31,10 +31,21 @@ function welcome(e) {
   } else if (inpName.value != "" && localStorage.getItem("dataTotal") != null) {
     localStorage.setItem("userName", inpName.value);
     inpName.value = "";
-    console.log(000, window.location.hostname + "/MainPage/MainPage.html");
-    window.location.assign(
-      window.location.hostname + "/MainPage/MainPage.html"
+    console.log(
+      9999,
+      window.location.hostname,
+      222,
+      (location.pathname = "/MainPage/MainPage.html")
     );
+    const path = (location.pathname = "/MainPage/MainPage.html").split("/")[1];
+    const path2 = (location.pathname = "/MainPage/MainPage.html").split("/")[2];
+    const host = window.location.hostname;
+    console.log(33333, path);
+    console.log(1111111111111, host);
+    console.log(88888888888, path2);
+
+    console.log(444, `${path}/${path2}`);
+    window.location.assign(`${path}/${path2}`);
   }
 }
 // -------------------------------- End of No login without Name & Store Name Issue  St of Loader Issue
