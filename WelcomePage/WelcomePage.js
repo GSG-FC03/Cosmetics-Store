@@ -13,14 +13,16 @@ function welcome(e) {
   else if (inpName.value != "" && localStorage.getItem("dataTotal") == null) {
     Loader.style.display = "flex";
 
-    setTimeout(() => {
+    let time = setTimeout(() => {
       if (localStorage.getItem("dataTotal") != null) {
         localStorage.setItem("userName", inpName.value);
         Loader.style.display = "none";
         console.log(window.location.hostname);
         window.location.href = "../MainPage/MainPage.html";
+        window.clearTimeout(time);
       }
     }, 500);
+
     // C If name is not empty and data is ready, login directly
   } else if (inpName.value != "" && localStorage.getItem("dataTotal") != null) {
     localStorage.setItem("userName", inpName.value);
