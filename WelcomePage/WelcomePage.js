@@ -13,7 +13,7 @@ function welcome(e) {
   else if (inpName.value != "" && localStorage.getItem("dataTotal") == null) {
     Loader.style.display = "flex";
 
-    let time = setTimeout(() => {
+    let time = setInterval(() => {
       if (localStorage.getItem("dataTotal") != null) {
         localStorage.setItem("userName", inpName.value);
         Loader.style.display = "none";
