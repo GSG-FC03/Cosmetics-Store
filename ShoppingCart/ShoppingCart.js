@@ -2,6 +2,10 @@
 // St. Declare variables
 const allcart = document.querySelector(".allCart");
 const cartTotal = JSON.parse(localStorage.getItem("cart"));
+
+//if cart is empty from page start
+if (cartTotal==null) {allcart.innerHTML = `<h2>You don't have any Products, Please browse products from <a href=../MainPage/MainPage.html>here</a></h2>`}
+
 // check if cartTotal not empty, if not then create elementes that whose contents are from the cartTotal
 if (cartTotal.length != 0)
   cartTotal.forEach((element) => {
